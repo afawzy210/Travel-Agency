@@ -1,0 +1,9 @@
+D:\SQL\Travel-Agency\TravelAgency\TravelAgency\bin\Debug\TravelAgency.exe.config
+D:\SQL\Travel-Agency\TravelAgency\TravelAgency\bin\Debug\TravelAgency.exe
+D:\SQL\Travel-Agency\TravelAgency\TravelAgency\bin\Debug\TravelAgency.pdb
+D:\SQL\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.csproj.AssemblyReference.cache
+D:\SQL\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.Properties.Resources.resources
+D:\SQL\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.csproj.GenerateResource.cache
+D:\SQL\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.csproj.CoreCompileInputs.cache
+D:\SQL\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.exe
+D:\SQL\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.pdb
