@@ -7,3 +7,13 @@ D:\SQL\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.csproj.Gen
 D:\SQL\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.csproj.CoreCompileInputs.cache
 D:\SQL\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.exe
 D:\SQL\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.pdb
+C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\bin\Debug\TravelAgency.exe.config
+C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\bin\Debug\TravelAgency.exe
+C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\bin\Debug\TravelAgency.pdb
+C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.csprojAssemblyReference.cache
+C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.Customer.resources
+C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.Properties.Resources.resources
+C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.csproj.GenerateResource.cache
+C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.exe
+C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.pdb
