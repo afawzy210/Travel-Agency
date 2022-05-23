@@ -25,7 +25,21 @@ namespace TravelAgency
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Main m = new Main("Customer");
+            Main m = new Main("customer");
+            string data = "";
+            //bool temp = false;
+
+            data += SSN.Text;
+            //data += (", " + Fname.Text);
+            //data += (", " + Lname.Text);
+            //data += (", " + Address.Text);
+            //data += (", " + Email.Text);
+            //data += (", " + PassID.Text);
+            //data += (", " + Dob.Text);
+            //data += (", " + Sex.Text);
+            //data += (", " + Job.Text);
+
+            m.Insert(data);
         }
 
         private void label7_Click(object sender, EventArgs e)
