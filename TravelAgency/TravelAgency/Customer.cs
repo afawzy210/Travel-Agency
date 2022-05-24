@@ -27,17 +27,30 @@ namespace TravelAgency
         {
             Main m = new Main("customer");
             string data = "";
-            //bool temp = false;
+            List<List<string>> R = m.Read();
 
-            data += SSN.Text;
-            //data += (", " + Fname.Text);
-            //data += (", " + Lname.Text);
-            //data += (", " + Address.Text);
-            //data += (", " + Email.Text);
-            //data += (", " + PassID.Text);
-            //data += (", " + Dob.Text);
-            //data += (", " + Sex.Text);
-            //data += (", " + Job.Text);
+            if (R.Count == 0)
+            {
+                data += 1;
+            }
+            else 
+            {
+                List<string> C = R[R.Count - 1];
+                int LID = Int32.Parse(C[0]) + 1;
+                data += LID ;
+            }
+            
+            //bool temp = false;
+            
+            
+            data += (" , '" + Fname.Text);
+            data += ("' , '" + Lname.Text);
+            data += ("' , '" + Address.Text);
+            data += ("' , '" + Email.Text);
+            data += ("' , " + PassID.Text);
+            data += (" , '" + Dob.Text);
+            data += ("' , '" + Sex.Text);
+            data += ("' , '" + Job.Text + "'");
 
             m.Insert(data);
         }

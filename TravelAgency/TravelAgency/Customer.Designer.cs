@@ -41,7 +41,6 @@ namespace TravelAgency
             this.Sex = new System.Windows.Forms.TextBox();
             this.Job = new System.Windows.Forms.TextBox();
             this.Address = new System.Windows.Forms.TextBox();
-            this.Dob = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,6 +50,7 @@ namespace TravelAgency
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.Dob = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -107,7 +107,7 @@ namespace TravelAgency
             // 
             // SSN
             // 
-            this.SSN.Location = new System.Drawing.Point(127, 122);
+            this.SSN.Location = new System.Drawing.Point(127, 119);
             this.SSN.Name = "SSN";
             this.SSN.Size = new System.Drawing.Size(131, 20);
             this.SSN.TabIndex = 6;
@@ -146,13 +146,6 @@ namespace TravelAgency
             this.Address.Name = "Address";
             this.Address.Size = new System.Drawing.Size(131, 20);
             this.Address.TabIndex = 11;
-            // 
-            // Dob
-            // 
-            this.Dob.Location = new System.Drawing.Point(474, 168);
-            this.Dob.Name = "Dob";
-            this.Dob.Size = new System.Drawing.Size(131, 20);
-            this.Dob.TabIndex = 12;
             // 
             // label1
             // 
@@ -236,11 +229,19 @@ namespace TravelAgency
             this.label9.TabIndex = 21;
             this.label9.Text = "birthdate";
             // 
+            // Dob
+            // 
+            this.Dob.Location = new System.Drawing.Point(474, 168);
+            this.Dob.Name = "Dob";
+            this.Dob.Size = new System.Drawing.Size(131, 20);
+            this.Dob.TabIndex = 23;
+            // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Dob);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -250,7 +251,6 @@ namespace TravelAgency
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Dob);
             this.Controls.Add(this.Address);
             this.Controls.Add(this.Job);
             this.Controls.Add(this.Sex);
@@ -285,7 +285,6 @@ namespace TravelAgency
         private System.Windows.Forms.TextBox Sex;
         private System.Windows.Forms.TextBox Job;
         private System.Windows.Forms.TextBox Address;
-        private System.Windows.Forms.TextBox Dob;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -295,5 +294,6 @@ namespace TravelAgency
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox Dob;
     }
 }
