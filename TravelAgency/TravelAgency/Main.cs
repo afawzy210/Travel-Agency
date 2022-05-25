@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace TravelAgency
 {
     class Main
-    {
+    { 
 
         SqlConnection con = new SqlConnection(@"Data Source=  DESKTOP-L75VKR3\SQLEXPRESS ;Initial Catalog=  TravelAgency  ;Integrated Security=True;");
         public string TableName;
