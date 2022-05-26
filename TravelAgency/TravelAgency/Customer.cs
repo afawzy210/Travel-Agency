@@ -18,14 +18,9 @@ namespace TravelAgency
             InitializeComponent();
         }
 
-        private void Customer_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             Main m = new Main("customer");
             string data = "";
             List<List<string>> R = m.Read();
@@ -34,16 +29,16 @@ namespace TravelAgency
             {
                 data += 1;
             }
-            else 
+            else
             {
                 List<string> C = R[R.Count - 1];
                 int LID = Int32.Parse(C[0]) + 1;
-                //data += LID ;
+                data += LID;
             }
-            
+
             //bool temp = false;
-            
-            
+
+
             data += (" , '" + Fname.Text);
             data += ("' , '" + Lname.Text);
             data += ("' , '" + Address.Text);
@@ -56,12 +51,11 @@ namespace TravelAgency
             m.Insert(data);
 
             MessageBox.Show("Added is complete");
-
         }
 
         private void label7_Click(object sender, EventArgs e)
         {
-                    }
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -175,7 +169,7 @@ namespace TravelAgency
 
                 MessageBox.Show("Updated is complete");
             }
-            else 
+            else
             {
                 MessageBox.Show("Not found");
             }
@@ -313,5 +307,11 @@ namespace TravelAgency
             }
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+}
 }
