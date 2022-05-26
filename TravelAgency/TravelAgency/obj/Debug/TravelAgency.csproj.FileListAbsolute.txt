@@ -17,3 +17,4 @@ C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\obj
 C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.csproj.CoreCompileInputs.cache
 C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.exe
 C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.pdb
+D:\SQL\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.Customer.resources

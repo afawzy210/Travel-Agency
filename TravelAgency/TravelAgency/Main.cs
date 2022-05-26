@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 namespace TravelAgency
 {
     class Main
-    {
+    { 
 
-        SqlConnection con = new SqlConnection(@"Data Source=  DESKTOP - 3UCT87L\SQLEXPRESS ;Initial Catalog=  GeorgeGreat3  ;Integrated Security=True;");
+        SqlConnection con = new SqlConnection(@"Data Source=  DESKTOP-3UCT87L\SQLEXPRESS ;Initial Catalog=  GeorgeGreat3  ;Integrated Security=True;");
         public string TableName;
         public Main(string TableName)
         {
