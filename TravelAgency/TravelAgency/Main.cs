@@ -40,7 +40,7 @@ namespace TravelAgency
         /// <param name="Condition">
         /// Condition Must be Fromated well
         ///      ColumnName Compare Value
-        /// Like EmployeeName = 'George'
+        /// Like EmployeeName = 'Amel'
         /// </param>
         /// <returns>Returns the Data in List of Lists </returns>
         public List<List<string>> Read(string Condition = "")

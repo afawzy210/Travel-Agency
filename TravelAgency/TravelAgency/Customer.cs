@@ -20,7 +20,12 @@ namespace TravelAgency
 
         private void Customer_Load(object sender, EventArgs e)
         {
-
+            Main m = new Main("customer");
+            List<List<string>> Table = m.Read();
+            for (int i = 0; i < Table.Count; i++) 
+            {
+                dataGridView1.DataSource = m.GetTable(Table[i],Table);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -59,7 +64,7 @@ namespace TravelAgency
 
         private void label7_Click(object sender, EventArgs e)
         {
-                    }
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -309,6 +314,11 @@ namespace TravelAgency
             {
                 MessageBox.Show("Not found");
             }
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
 
         }
     }

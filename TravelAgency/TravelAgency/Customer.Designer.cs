@@ -51,13 +51,15 @@ namespace TravelAgency
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.Dob = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(69, 325);
+            this.button1.Location = new System.Drawing.Point(12, 279);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(151, 89);
+            this.button1.Size = new System.Drawing.Size(72, 22);
             this.button1.TabIndex = 0;
             this.button1.Text = "Insert";
             this.button1.UseVisualStyleBackColor = true;
@@ -65,9 +67,9 @@ namespace TravelAgency
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(226, 325);
+            this.button2.Location = new System.Drawing.Point(90, 279);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(151, 89);
+            this.button2.Size = new System.Drawing.Size(72, 22);
             this.button2.TabIndex = 1;
             this.button2.Text = "Update";
             this.button2.UseVisualStyleBackColor = true;
@@ -75,9 +77,9 @@ namespace TravelAgency
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(396, 325);
+            this.button3.Location = new System.Drawing.Point(168, 279);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(151, 89);
+            this.button3.Size = new System.Drawing.Size(72, 22);
             this.button3.TabIndex = 2;
             this.button3.Text = "Delete";
             this.button3.UseVisualStyleBackColor = true;
@@ -85,12 +87,13 @@ namespace TravelAgency
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(553, 325);
+            this.button4.Location = new System.Drawing.Point(246, 279);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(151, 89);
+            this.button4.Size = new System.Drawing.Size(72, 22);
             this.button4.TabIndex = 3;
             this.button4.Text = "Select";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Fname
             // 
@@ -129,21 +132,21 @@ namespace TravelAgency
             // 
             // Sex
             // 
-            this.Sex.Location = new System.Drawing.Point(474, 39);
+            this.Sex.Location = new System.Drawing.Point(361, 39);
             this.Sex.Name = "Sex";
             this.Sex.Size = new System.Drawing.Size(131, 20);
             this.Sex.TabIndex = 9;
             // 
             // Job
             // 
-            this.Job.Location = new System.Drawing.Point(474, 83);
+            this.Job.Location = new System.Drawing.Point(361, 83);
             this.Job.Name = "Job";
             this.Job.Size = new System.Drawing.Size(131, 20);
             this.Job.TabIndex = 10;
             // 
             // Address
             // 
-            this.Address.Location = new System.Drawing.Point(474, 122);
+            this.Address.Location = new System.Drawing.Point(361, 122);
             this.Address.Name = "Address";
             this.Address.Size = new System.Drawing.Size(131, 20);
             this.Address.TabIndex = 11;
@@ -196,7 +199,7 @@ namespace TravelAgency
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(393, 39);
+            this.label6.Location = new System.Drawing.Point(280, 39);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(23, 13);
             this.label6.TabIndex = 18;
@@ -205,7 +208,7 @@ namespace TravelAgency
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(393, 86);
+            this.label7.Location = new System.Drawing.Point(280, 86);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(21, 13);
             this.label7.TabIndex = 19;
@@ -215,7 +218,7 @@ namespace TravelAgency
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(393, 129);
+            this.label8.Location = new System.Drawing.Point(280, 129);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(44, 13);
             this.label8.TabIndex = 20;
@@ -224,7 +227,7 @@ namespace TravelAgency
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(393, 168);
+            this.label9.Location = new System.Drawing.Point(280, 168);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(48, 13);
             this.label9.TabIndex = 21;
@@ -232,16 +235,25 @@ namespace TravelAgency
             // 
             // Dob
             // 
-            this.Dob.Location = new System.Drawing.Point(474, 168);
+            this.Dob.Location = new System.Drawing.Point(361, 168);
             this.Dob.Name = "Dob";
             this.Dob.Size = new System.Drawing.Size(131, 20);
             this.Dob.TabIndex = 23;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(361, 221);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(427, 217);
+            this.dataGridView1.TabIndex = 24;
             // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Dob);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -267,6 +279,7 @@ namespace TravelAgency
             this.Name = "Customer";
             this.Text = "Customer";
             this.Load += new System.EventHandler(this.Customer_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,5 +309,6 @@ namespace TravelAgency
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox Dob;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
