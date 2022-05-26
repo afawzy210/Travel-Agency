@@ -25,7 +25,9 @@ namespace TravelAgency
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Main m = new Main("Customer");
             
+
         }
 
         private void label7_Click(object sender, EventArgs e)
