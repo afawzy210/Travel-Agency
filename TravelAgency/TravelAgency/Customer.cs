@@ -41,12 +41,6 @@ namespace TravelAgency
 
         private void button1_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            //hi
-            Main m = new Main("customer");
-=======
-
->>>>>>> f5f4df753dcf345ab14e375b8d339628a4fb9df5
             string data = "";
             List<List<string>> R = m.Read();
 
@@ -63,18 +57,6 @@ namespace TravelAgency
 
                 data += LID ;
             }
-
-
-
-            data += (" , '" + Fname.Text);
-            data += ("' , '" + Lname.Text);
-            data += ("' , '" + Address.Text);
-            data += ("' , '" + Email.Text);
-            data += ("' , " + PassID.Text);
-            data += (" , '" + Dob.Text);
-            data += ("' , '" + Sex.Text);
-            data += ("' , '" + Job.Text + "'");
-=======
             
             
             data += " , '" + Fname.Text;
@@ -85,7 +67,6 @@ namespace TravelAgency
             data += " , '" + Dob.Text;
             data += "' , '" + Sex.Text;
             data += "' , '" + Job.Text + "'";
->>>>>>> f5f4df753dcf345ab14e375b8d339628a4fb9df5
 
             m.Insert(data);
 
@@ -201,11 +182,7 @@ namespace TravelAgency
                     {
                         temp = true;
                     }
-<<<<<<< HEAD
-                    set += ("job = '" + Job.Text + "'");
-=======
                     set += "job = '" + Job.Text + "'";
->>>>>>> f5f4df753dcf345ab14e375b8d339628a4fb9df5
                 }
 
                 m.Update("SSN = " + SSN.Text, set);
@@ -294,19 +271,7 @@ namespace TravelAgency
                 }
                 else
                 {
-<<<<<<< HEAD
-                    if (temp)
-                    {
-                        set += (", ");
-                    }
-                    else
-                    {
-                        temp = true;
-                    }
-                    set += ("job = '" + Job.Text + "'");
-=======
                     temp = true;
->>>>>>> f5f4df753dcf345ab14e375b8d339628a4fb9df5
                 }
                 set += "passport_ID = " + PassID.Text;
             }

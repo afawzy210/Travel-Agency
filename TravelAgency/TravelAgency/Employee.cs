@@ -30,7 +30,7 @@ namespace TravelAgency
 
             if (R.Count == 0)
             {
-                data += 1;
+                data += 1;//ay kalam
             }
             else
             {
@@ -46,13 +46,13 @@ namespace TravelAgency
 
 
             //data += ("' , " + id.Text);
-            data += (" , '" + sex.Text);
-            data += ("' , '" + job.Text);
-            data += ("' , '" + address.Text);
-            data += ("' , '" + name.Text );
-            data += ("' , '" + password.Text);
-            data += ("' , " + salairy.Text);
-            data += (" , " + workinghours.Text);
+            data += " , '" + sex.Text;
+            data += "' , '" + job.Text;
+            data += "' , '" + address.Text;
+            data += "' , '" + name.Text ;
+            data += "' , '" + password.Text;
+            data += "' , " + salairy.Text;
+            data += " , " + workinghours.Text;
             
             
 
@@ -74,7 +74,7 @@ namespace TravelAgency
 
                 if (sex.Text != "")
                 {
-                    set += ("sex = '" + sex.Text + "'");
+                    set += "sex = '" + sex.Text + "'";
                     temp = true;
                 }
 
@@ -82,78 +82,78 @@ namespace TravelAgency
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("job = '" + job.Text + "'");
+                    set += "job = '" + job.Text + "'";
                 }
 
                 if (address.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("EMP_address = '" + address.Text + "'");
+                    set += "EMP_address = '" + address.Text + "'";
                 }
 
                 if (name.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("EMP_name = '" + name.Text + "'");
+                    set += "EMP_name = '" + name.Text + "'";
                 }
 
                 if (password.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("emp_password = '" + password.Text + "'");
+                    set += "emp_password = '" + password.Text + "'";
                 }
 
                 if (salairy.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("salairy = '" + salairy.Text + "'");
+                    set += "salairy = '" + salairy.Text + "'";
                 }
 
                 if (workinghours.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("working_hours = '" + workinghours.Text + "'");
+                    set += "working_hours = '" + workinghours.Text + "'";
                 }
 
                 
@@ -181,7 +181,7 @@ namespace TravelAgency
 
                 if (id.Text != "")
                 {
-                    set += ("Emp_id = " + id.Text);
+                    set += "Emp_id = " + id.Text;
                     temp = true;
                 }
 
@@ -189,91 +189,91 @@ namespace TravelAgency
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("sex = '" + sex.Text + "'");
+                    set += "sex = '" + sex.Text + "'";
                 }
 
                 if (job.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("job = '" + job.Text + "'");
+                    set += "job = '" + job.Text + "'";
                 }
 
                 if (address.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("EMP_address = '" + address.Text + "'");
+                    set += "EMP_address = '" + address.Text + "'";
                 }
 
                 if (name.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("EMP_name = '" + name.Text + "'");
+                    set += "EMP_name = '" + name.Text + "'";
                 }
 
                 if (password.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("emp_password = " + password.Text);
+                    set += "emp_password = " + password.Text;
                 }
 
                 if (salairy.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("salairy = '" + salairy.Text + "'");
+                    set += "salairy = '" + salairy.Text + "'";
                 }
 
                 if (workinghours.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("working_hours = '" + workinghours.Text + "'");
+                    set += "working_hours = '" + workinghours.Text + "'";
                 }
 
                 
