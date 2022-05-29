@@ -213,7 +213,7 @@ namespace TravelAgency
             {
                 if (temp)
                 {
-                    set += ", ";
+                    set += "and ";
                 }
                 else
                 {
@@ -226,7 +226,7 @@ namespace TravelAgency
             {
                 if (temp)
                 {
-                    set += ", ";
+                    set += "and ";
                 }
                 else
                 {
@@ -239,7 +239,7 @@ namespace TravelAgency
             {
                 if (temp)
                 {
-                    set += ", ";
+                    set += "and ";
                 }
                 else
                 {
@@ -252,7 +252,7 @@ namespace TravelAgency
             {
                 if (temp)
                 {
-                    set += ", ";
+                    set += "and ";
                 }
                 else
                 {
@@ -265,7 +265,7 @@ namespace TravelAgency
             {
                 if (temp)
                 {
-                    set += ", ";
+                    set += "and ";
                 }
                 else
                 {
@@ -278,7 +278,7 @@ namespace TravelAgency
             {
                 if (temp)
                 {
-                    set += ", ";
+                    set += "and ";
                 }
                 else
                 {
@@ -291,7 +291,7 @@ namespace TravelAgency
             {
                 if (temp)
                 {
-                    set += ", ";
+                    set += "and ";
                 }
                 else
                 {
@@ -304,7 +304,7 @@ namespace TravelAgency
             {
                 if (temp)
                 {
-                    set += ", ";
+                    set += "and ";
                 }
                 else
                 {
@@ -323,6 +323,121 @@ namespace TravelAgency
         private void button4_Click(object sender, EventArgs e)
         {
             List<List<string>> Table = m.Read();
+
+            string set = "";
+            bool temp = false;
+
+            if (SSN.Text != "")
+            {
+                set += "SSN = " + SSN.Text;
+                temp = true;
+            }
+
+            if (Fname.Text != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "F_Name LIKE '" + Fname.Text + "'";
+            }
+
+            if (Lname.Text != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "L_Name LIKE '" + Lname.Text + "'";
+            }
+
+            if (Address.Text != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "cus_address LIKE '" + Address.Text + "'";
+            }
+
+            if (Email.Text != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "email LIKE '" + Email.Text + "'";
+            }
+
+            if (PassID.Text != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "passport_ID = " + PassID.Text;
+            }
+
+            if (Dob.Text != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "birthdate = '" + Dob.Text + "'";
+            }
+
+            if (Sex.Text != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "sex LIKE '" + Sex.Text + "'";
+            }
+
+            if (Job.Text != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "job LIKE '" + Job.Text + "'";
+            }
+
+            Table = m.Read(set);
 
             dataGridView1.DataSource = m.GetTable(LH, Table);
         }
