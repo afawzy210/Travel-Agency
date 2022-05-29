@@ -22,3 +22,4 @@ C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\obj
 C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.Invoice.resources
 D:\SQL\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.Employee.resources
 D:\SQL\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.Invoice.resources
+D:\SQL\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.Hotel.resources

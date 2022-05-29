@@ -410,7 +410,7 @@ namespace TravelAgency
                 {
                     temp = true;
                 }
-                set += "birthdate = '" + Dob.Text + "'";
+                set += "birthdate like '" + Dob.Text + "'";
             }
 
             if (Sex.Text != "")
