@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,31 +10,23 @@ using System.Windows.Forms;
 
 namespace TravelAgency
 {
-    public partial class Customer : Form
+    public partial class Employee : Form
     {
-        public Customer()
+        public Employee()
         {
             InitializeComponent();
         }
 
-
-        private void Customer_Load(object sender, EventArgs e)
+        private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            Main m = new Main("customer");
-            List<List<string>> Table = m.Read();
-            for (int i = 0; i < Table.Count; i++) 
-            {
-                dataGridView1.DataSource = m.GetTable(Table[i],Table);
-            }
-        }
 
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //hi
-            Main m = new Main("customer");
+            Main E = new Main("Employee");
             string data = "";
-            List<List<string>> R = m.Read();
+            List<List<string>> R = E.Read();
 
             if (R.Count == 0)
             {
@@ -48,48 +39,46 @@ namespace TravelAgency
 
                 data += LID;
 
-                data += LID ;
+                data += LID;
             }
 
             //bool temp = false;
 
 
-            data += (" , '" + Fname.Text);
-            data += ("' , '" + Lname.Text);
-            data += ("' , '" + Address.Text);
-            data += ("' , '" + Email.Text);
-            data += ("' , " + PassID.Text);
-            data += (" , '" + Dob.Text);
-            data += ("' , '" + Sex.Text);
-            data += ("' , '" + Job.Text + "'");
+            //data += ("' , " + id.Text);
+            data += (" , '" + sex.Text);
+            data += ("' , '" + job.Text);
+            data += ("' , '" + address.Text);
+            data += ("' , '" + name.Text );
+            data += ("' , '" + password.Text);
+            data += ("' , " + salairy.Text);
+            data += (" , " + workinghours.Text);
+            
+            
 
-            m.Insert(data);
+            E.Insert(data);
 
             MessageBox.Show("Added is complete");
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            Main m = new Main("customer");
+            Main E = new Main("Employee");
 
-            List<List<string>> R = m.Read();
+            List<List<string>> R = E.Read();
 
-            if (Int32.Parse(SSN.Text) > 0 && Int32.Parse(SSN.Text) <= R.Count)
+            if (Int32.Parse(id.Text) > 0 && Int32.Parse(id.Text) <= R.Count)
             {
                 string set = "";
                 bool temp = false;
 
-                if (Fname.Text != "")
+                if (sex.Text != "")
                 {
-                    set += ("F_Name = '" + Fname.Text + "'");
+                    set += ("sex = '" + sex.Text + "'");
                     temp = true;
                 }
 
-                if (Lname.Text != "")
+                if (job.Text != "")
                 {
                     if (temp)
                     {
@@ -99,10 +88,10 @@ namespace TravelAgency
                     {
                         temp = true;
                     }
-                    set += ("L_Name = '" + Lname.Text + "'");
+                    set += ("job = '" + job.Text + "'");
                 }
 
-                if (Address.Text != "")
+                if (address.Text != "")
                 {
                     if (temp)
                     {
@@ -112,10 +101,10 @@ namespace TravelAgency
                     {
                         temp = true;
                     }
-                    set += ("cus_address = '" + Address.Text + "'");
+                    set += ("EMP_address = '" + address.Text + "'");
                 }
 
-                if (Email.Text != "")
+                if (name.Text != "")
                 {
                     if (temp)
                     {
@@ -125,10 +114,10 @@ namespace TravelAgency
                     {
                         temp = true;
                     }
-                    set += ("email = '" + Email.Text + "'");
+                    set += ("EMP_name = '" + name.Text + "'");
                 }
 
-                if (PassID.Text != "")
+                if (password.Text != "")
                 {
                     if (temp)
                     {
@@ -138,10 +127,10 @@ namespace TravelAgency
                     {
                         temp = true;
                     }
-                    set += ("passport_ID = '" + PassID.Text + "'");
+                    set += ("emp_password = '" + password.Text + "'");
                 }
 
-                if (Dob.Text != "")
+                if (salairy.Text != "")
                 {
                     if (temp)
                     {
@@ -151,10 +140,10 @@ namespace TravelAgency
                     {
                         temp = true;
                     }
-                    set += ("birthdate = '" + Dob.Text + "'");
+                    set += ("salairy = '" + salairy.Text + "'");
                 }
 
-                if (Sex.Text != "")
+                if (workinghours.Text != "")
                 {
                     if (temp)
                     {
@@ -164,23 +153,12 @@ namespace TravelAgency
                     {
                         temp = true;
                     }
-                    set += ("sex = '" + Sex.Text + "'");
+                    set += ("working_hours = '" + workinghours.Text + "'");
                 }
 
-                if (Job.Text != "")
-                {
-                    if (temp)
-                    {
-                        set += (", ");
-                    }
-                    else
-                    {
-                        temp = true;
-                    }
-                    set += ("job = '" + Job.Text + "'");
-                }
+                
 
-                m.Update("SSN = " + SSN.Text, set);
+                E.Update("Emp_id = " + id.Text, set);
 
                 MessageBox.Show("Updated is complete");
             }
@@ -188,27 +166,26 @@ namespace TravelAgency
             {
                 MessageBox.Show("Not found");
             }
-
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Main m = new Main("customer");
+            Main E = new Main("customer");
 
-            List<List<string>> R = m.Read();
+            List<List<string>> R = E.Read();
 
-            if (Int32.Parse(SSN.Text) > 0 && Int32.Parse(SSN.Text) <= R.Count)
+            if (Int32.Parse(id.Text) > 0 && Int32.Parse(id.Text) <= R.Count)
             {
                 string set = "";
                 bool temp = false;
 
-                if (SSN.Text != "")
+                if (id.Text != "")
                 {
-                    set += ("SSN = " + SSN.Text);
+                    set += ("Emp_id = " + id.Text);
                     temp = true;
                 }
 
-                if (Fname.Text != "")
+                if (sex.Text != "")
                 {
                     if (temp)
                     {
@@ -218,10 +195,10 @@ namespace TravelAgency
                     {
                         temp = true;
                     }
-                    set += ("F_Name = '" + Fname.Text + "'");
+                    set += ("sex = '" + sex.Text + "'");
                 }
 
-                if (Lname.Text != "")
+                if (job.Text != "")
                 {
                     if (temp)
                     {
@@ -231,10 +208,10 @@ namespace TravelAgency
                     {
                         temp = true;
                     }
-                    set += ("L_Name = '" + Lname.Text + "'");
+                    set += ("job = '" + job.Text + "'");
                 }
 
-                if (Address.Text != "")
+                if (address.Text != "")
                 {
                     if (temp)
                     {
@@ -244,10 +221,10 @@ namespace TravelAgency
                     {
                         temp = true;
                     }
-                    set += ("cus_address = '" + Address.Text + "'");
+                    set += ("EMP_address = '" + address.Text + "'");
                 }
 
-                if (Email.Text != "")
+                if (name.Text != "")
                 {
                     if (temp)
                     {
@@ -257,10 +234,10 @@ namespace TravelAgency
                     {
                         temp = true;
                     }
-                    set += ("email = '" + Email.Text + "'");
+                    set += ("EMP_name = '" + name.Text + "'");
                 }
 
-                if (PassID.Text != "")
+                if (password.Text != "")
                 {
                     if (temp)
                     {
@@ -270,10 +247,10 @@ namespace TravelAgency
                     {
                         temp = true;
                     }
-                    set += ("passport_ID = " + PassID.Text);
+                    set += ("emp_password = " + password.Text);
                 }
 
-                if (Dob.Text != "")
+                if (salairy.Text != "")
                 {
                     if (temp)
                     {
@@ -283,10 +260,10 @@ namespace TravelAgency
                     {
                         temp = true;
                     }
-                    set += ("birthdate = '" + Dob.Text + "'");
+                    set += ("salairy = '" + salairy.Text + "'");
                 }
 
-                if (Sex.Text != "")
+                if (workinghours.Text != "")
                 {
                     if (temp)
                     {
@@ -296,23 +273,12 @@ namespace TravelAgency
                     {
                         temp = true;
                     }
-                    set += ("sex = '" + Sex.Text + "'");
+                    set += ("working_hours = '" + workinghours.Text + "'");
                 }
 
-                if (Job.Text != "")
-                {
-                    if (temp)
-                    {
-                        set += (", ");
-                    }
-                    else
-                    {
-                        temp = true;
-                    }
-                    set += ("job = '" + Job.Text + "'");
-                }
+                
 
-                m.Delete(set);
+                E.Delete(set);
 
                 MessageBox.Show("Delete is complete");
             }
@@ -320,13 +286,6 @@ namespace TravelAgency
             {
                 MessageBox.Show("Not found");
             }
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
-

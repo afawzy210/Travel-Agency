@@ -1,6 +1,14 @@
 {
   "ExpandedNodes": [
+<<<<<<< HEAD
     ""
   ],
+=======
+    "",
+    "\\TravelAgency",
+    "\\TravelAgency\\TravelAgency"
+  ],
+  "SelectedNode": "\\TravelAgency\\TravelAgency\\Main.cs",
+>>>>>>> 1c00fdf4548426a44d31e94c48359872fb649b7f
   "PreviewInSolutionExplorer": false
 }
