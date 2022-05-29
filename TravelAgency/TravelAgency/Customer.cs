@@ -21,6 +21,7 @@ namespace TravelAgency
             InitializeComponent();
         }
 
+
         private void Customer_Load(object sender, EventArgs e)
         {
             List<List<string>> Table = m.Read();
@@ -37,9 +38,15 @@ namespace TravelAgency
             dataGridView1.DataSource = m.GetTable(LH, Table);
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+            //hi
+            Main m = new Main("customer");
+=======
 
+>>>>>>> f5f4df753dcf345ab14e375b8d339628a4fb9df5
             string data = "";
             List<List<string>> R = m.Read();
 
@@ -47,14 +54,27 @@ namespace TravelAgency
             {
                 data += 1;
             }
-            else 
+            else
             {
                 List<string> C = R[R.Count - 1];
                 int LID = Int32.Parse(C[0]) + 1;
+
+                data += LID;
+
                 data += LID ;
             }
-            
-            //bool temp = false;
+
+
+
+            data += (" , '" + Fname.Text);
+            data += ("' , '" + Lname.Text);
+            data += ("' , '" + Address.Text);
+            data += ("' , '" + Email.Text);
+            data += ("' , " + PassID.Text);
+            data += (" , '" + Dob.Text);
+            data += ("' , '" + Sex.Text);
+            data += ("' , '" + Job.Text + "'");
+=======
             
             
             data += " , '" + Fname.Text;
@@ -65,6 +85,7 @@ namespace TravelAgency
             data += " , '" + Dob.Text;
             data += "' , '" + Sex.Text;
             data += "' , '" + Job.Text + "'";
+>>>>>>> f5f4df753dcf345ab14e375b8d339628a4fb9df5
 
             m.Insert(data);
 
@@ -180,14 +201,18 @@ namespace TravelAgency
                     {
                         temp = true;
                     }
+<<<<<<< HEAD
+                    set += ("job = '" + Job.Text + "'");
+=======
                     set += "job = '" + Job.Text + "'";
+>>>>>>> f5f4df753dcf345ab14e375b8d339628a4fb9df5
                 }
 
                 m.Update("SSN = " + SSN.Text, set);
 
                 MessageBox.Show("Updated is complete");
             }
-            else 
+            else
             {
                 MessageBox.Show("Not found");
             }
@@ -269,7 +294,19 @@ namespace TravelAgency
                 }
                 else
                 {
+<<<<<<< HEAD
+                    if (temp)
+                    {
+                        set += (", ");
+                    }
+                    else
+                    {
+                        temp = true;
+                    }
+                    set += ("job = '" + Job.Text + "'");
+=======
                     temp = true;
+>>>>>>> f5f4df753dcf345ab14e375b8d339628a4fb9df5
                 }
                 set += "passport_ID = " + PassID.Text;
             }
@@ -443,3 +480,4 @@ namespace TravelAgency
         }
     }
 }
+
