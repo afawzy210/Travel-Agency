@@ -13,6 +13,9 @@ namespace TravelAgency
 {
     public partial class Customer : Form
     {
+        Main m = new Main("customer");
+        List<string> LH = new List<string>();
+
         public Customer()
         {
             InitializeComponent();
@@ -21,19 +24,29 @@ namespace TravelAgency
 
         private void Customer_Load(object sender, EventArgs e)
         {
-            Main m = new Main("customer");
             List<List<string>> Table = m.Read();
-            for (int i = 0; i < Table.Count; i++) 
-            {
-                dataGridView1.DataSource = m.GetTable(Table[i],Table);
-            }
+            LH.Add("SSN");
+            LH.Add("First Name");
+            LH.Add("Last Name");
+            LH.Add("Address");
+            LH.Add("Email");
+            LH.Add("Passport ID");
+            LH.Add("Birth date");
+            LH.Add("Sex");
+            LH.Add("Job");
+
+            dataGridView1.DataSource = m.GetTable(LH, Table);
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             //hi
             Main m = new Main("customer");
+=======
+
+>>>>>>> f5f4df753dcf345ab14e375b8d339628a4fb9df5
             string data = "";
             List<List<string>> R = m.Read();
 
@@ -51,7 +64,6 @@ namespace TravelAgency
                 data += LID ;
             }
 
-            //bool temp = false;
 
 
             data += (" , '" + Fname.Text);
@@ -62,10 +74,23 @@ namespace TravelAgency
             data += (" , '" + Dob.Text);
             data += ("' , '" + Sex.Text);
             data += ("' , '" + Job.Text + "'");
+=======
+            
+            
+            data += " , '" + Fname.Text;
+            data += "' , '" + Lname.Text;
+            data += "' , '" + Address.Text;
+            data += "' , '" + Email.Text;
+            data += "' , " + PassID.Text;
+            data += " , '" + Dob.Text;
+            data += "' , '" + Sex.Text;
+            data += "' , '" + Job.Text + "'";
+>>>>>>> f5f4df753dcf345ab14e375b8d339628a4fb9df5
 
             m.Insert(data);
 
             MessageBox.Show("Added is complete");
+
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -74,7 +99,6 @@ namespace TravelAgency
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Main m = new Main("customer");
 
             List<List<string>> R = m.Read();
 
@@ -85,7 +109,7 @@ namespace TravelAgency
 
                 if (Fname.Text != "")
                 {
-                    set += ("F_Name = '" + Fname.Text + "'");
+                    set += "F_Name = '" + Fname.Text + "'";
                     temp = true;
                 }
 
@@ -93,91 +117,95 @@ namespace TravelAgency
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("L_Name = '" + Lname.Text + "'");
+                    set += "L_Name = '" + Lname.Text + "'";
                 }
 
                 if (Address.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("cus_address = '" + Address.Text + "'");
+                    set += "cus_address = '" + Address.Text + "'";
                 }
 
                 if (Email.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("email = '" + Email.Text + "'");
+                    set += "email = '" + Email.Text + "'";
                 }
 
                 if (PassID.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("passport_ID = '" + PassID.Text + "'");
+                    set += "passport_ID = '" + PassID.Text + "'";
                 }
 
                 if (Dob.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("birthdate = '" + Dob.Text + "'");
+                    set += "birthdate = '" + Dob.Text + "'";
                 }
 
                 if (Sex.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("sex = '" + Sex.Text + "'");
+                    set += "sex = '" + Sex.Text + "'";
                 }
 
                 if (Job.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
+<<<<<<< HEAD
                     set += ("job = '" + Job.Text + "'");
+=======
+                    set += "job = '" + Job.Text + "'";
+>>>>>>> f5f4df753dcf345ab14e375b8d339628a4fb9df5
                 }
 
                 m.Update("SSN = " + SSN.Text, set);
@@ -193,114 +221,80 @@ namespace TravelAgency
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Main m = new Main("customer");
 
             List<List<string>> R = m.Read();
 
-            if (Int32.Parse(SSN.Text) > 0 && Int32.Parse(SSN.Text) <= R.Count)
-            {
-                string set = "";
-                bool temp = false;
+            
+            string set = "";
+            bool temp = false;
 
-                if (SSN.Text != "")
+            if (SSN.Text != "")
+            {
+                set += "SSN = " + SSN.Text;
+                temp = true;
+            }
+
+            if (Fname.Text != "")
+            {
+                if (temp)
                 {
-                    set += ("SSN = " + SSN.Text);
+                    set += ", ";
+                }
+                else
+                {
                     temp = true;
                 }
+                set += "F_Name LIKE '" + Fname.Text + "'";
+            }
 
-                if (Fname.Text != "")
+            if (Lname.Text != "")
+            {
+                if (temp)
                 {
-                    if (temp)
-                    {
-                        set += (", ");
-                    }
-                    else
-                    {
-                        temp = true;
-                    }
-                    set += ("F_Name = '" + Fname.Text + "'");
+                    set += ", ";
                 }
-
-                if (Lname.Text != "")
+                else
                 {
-                    if (temp)
-                    {
-                        set += (", ");
-                    }
-                    else
-                    {
-                        temp = true;
-                    }
-                    set += ("L_Name = '" + Lname.Text + "'");
+                    temp = true;
                 }
+                set += "L_Name LIKE '" + Lname.Text + "'";
+            }
 
-                if (Address.Text != "")
+            if (Address.Text != "")
+            {
+                if (temp)
                 {
-                    if (temp)
-                    {
-                        set += (", ");
-                    }
-                    else
-                    {
-                        temp = true;
-                    }
-                    set += ("cus_address = '" + Address.Text + "'");
+                    set += ", ";
                 }
-
-                if (Email.Text != "")
+                else
                 {
-                    if (temp)
-                    {
-                        set += (", ");
-                    }
-                    else
-                    {
-                        temp = true;
-                    }
-                    set += ("email = '" + Email.Text + "'");
+                    temp = true;
                 }
+                set += "cus_address LIKE '" + Address.Text + "'";
+            }
 
-                if (PassID.Text != "")
+            if (Email.Text != "")
+            {
+                if (temp)
                 {
-                    if (temp)
-                    {
-                        set += (", ");
-                    }
-                    else
-                    {
-                        temp = true;
-                    }
-                    set += ("passport_ID = " + PassID.Text);
+                    set += ", ";
                 }
-
-                if (Dob.Text != "")
+                else
                 {
-                    if (temp)
-                    {
-                        set += (", ");
-                    }
-                    else
-                    {
-                        temp = true;
-                    }
-                    set += ("birthdate = '" + Dob.Text + "'");
+                    temp = true;
                 }
+                set += "email LIKE '" + Email.Text + "'";
+            }
 
-                if (Sex.Text != "")
+            if (PassID.Text != "")
+            {
+                if (temp)
                 {
-                    if (temp)
-                    {
-                        set += (", ");
-                    }
-                    else
-                    {
-                        temp = true;
-                    }
-                    set += ("sex = '" + Sex.Text + "'");
+                    set += ", ";
                 }
-
-                if (Job.Text != "")
+                else
                 {
+<<<<<<< HEAD
                     if (temp)
                     {
                         set += (", ");
@@ -310,22 +304,64 @@ namespace TravelAgency
                         temp = true;
                     }
                     set += ("job = '" + Job.Text + "'");
+=======
+                    temp = true;
+>>>>>>> f5f4df753dcf345ab14e375b8d339628a4fb9df5
                 }
-
-                m.Delete(set);
-
-                MessageBox.Show("Delete is complete");
+                set += "passport_ID = " + PassID.Text;
             }
-            else
+
+            if (Dob.Text != "")
             {
-                MessageBox.Show("Not found");
+                if (temp)
+                {
+                    set += ", ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "birthdate = '" + Dob.Text + "'";
             }
+
+            if (Sex.Text != "")
+            {
+                if (temp)
+                {
+                    set += ", ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "sex LIKE '" + Sex.Text + "'";
+            }
+
+            if (Job.Text != "")
+            {
+                if (temp)
+                {
+                    set += ", ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "job LIKE '" + Job.Text + "'";
+            }
+
+            m.Delete(set);
+
+            MessageBox.Show("Delete is complete");
+            
 
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            List<List<string>> Table = m.Read();
 
+            dataGridView1.DataSource = m.GetTable(LH, Table);
         }
     }
 }

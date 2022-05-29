@@ -8,7 +8,10 @@
     "\\TravelAgency",
     "\\TravelAgency\\TravelAgency"
   ],
+<<<<<<< HEAD
   "SelectedNode": "\\TravelAgency\\TravelAgency\\Main.cs",
 >>>>>>> 1c00fdf4548426a44d31e94c48359872fb649b7f
+=======
+>>>>>>> f5f4df753dcf345ab14e375b8d339628a4fb9df5
   "PreviewInSolutionExplorer": false
 }
