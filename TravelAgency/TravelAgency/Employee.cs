@@ -14,11 +14,22 @@ namespace TravelAgency
     {
         Main E = new Main("Employee");
         List<string> LH = new List<string>();
+        private string idemp;
         public Employee()
         {
             InitializeComponent();
         }
-
+        void clear()
+        {
+            id.Text = "";
+            job.Text = "";
+            sex.Text = "";
+            address.Text = "";
+            name.Text = "";
+            password.Text = "";
+            salairy.Text = "";
+            workinghours.Text = "";
+        }
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
@@ -29,8 +40,6 @@ namespace TravelAgency
             
             string data = "";
             List<List<string>> R = E.Read();
-
-
             if (R.Count == 0)
             {
                 data += 1;//ay kalam
@@ -40,8 +49,11 @@ namespace TravelAgency
                 List<string> C = R[R.Count - 1];
                 int LID = Int32.Parse(C[0]) + 1;
                 data += LID;
-            }
 
+            
+                idemp += data[0].ToString();
+
+            }
 
             data += " , '" + sex.Text;
             data += "' , '" + job.Text;
@@ -51,14 +63,15 @@ namespace TravelAgency
             data += "' , " + salairy.Text;
             data += " , " + workinghours.Text;
             
-            
-
             E.Insert(data);
 
             MessageBox.Show("Added is complete");
-            Invoice form = new Invoice(id.Text);
-            form.ShowDialog();
+            Hotel form2 = new Hotel(idemp);
+            form2.ShowDialog();
             
+            //Invoice form = new Invoice(id.Text,idhotel);
+            //form.ShowDialog();
+            clear();
 
         }
 
@@ -192,100 +205,103 @@ namespace TravelAgency
                 }
                 else
                 {
+
+                    set += "Emp_id = " + id.Text;
+
                     temp = true;
                 }
-                set += "Emp_id = " + id.Text;
+                //set += "Emp_id = " + id.Text;
             }
 
-            if (sex.Text != "")
+                if (sex.Text != "")
                 {
                     if (temp)
                     {
-                        set += ", ";
+                        set += " and ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += "sex = '" + sex.Text + "'";
+                    set += "sex LIKE '" + sex.Text + "'";
                 }
 
                 if (job.Text != "")
                 {
                     if (temp)
                     {
-                        set += ", ";
+                        set += " and ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += "job = '" + job.Text + "'";
+                    set += "job LIKE '" + job.Text + "'";
                 }
 
                 if (address.Text != "")
                 {
                     if (temp)
                     {
-                        set += ", ";
+                        set += " and ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += "EMP_address = '" + address.Text + "'";
+                    set += "EMP_address LIKE '" + address.Text + "'";
                 }
 
                 if (name.Text != "")
                 {
                     if (temp)
                     {
-                        set += ", ";
+                        set += " and ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += "EMP_name = '" + name.Text + "'";
+                    set += "EMP_name LIKE '" + name.Text + "'";
                 }
 
                 if (password.Text != "")
                 {
                     if (temp)
                     {
-                        set += ", ";
+                        set += " and ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += "emp_password = " + password.Text;
+                    set += "emp_password LIKE '" + password.Text + "'";
                 }
 
                 if (salairy.Text != "")
                 {
                     if (temp)
                     {
-                        set += ", ";
+                        set += " and ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += "salairy = '" + salairy.Text + "'";
+                    set += "salairy = " + salairy.Text ;
                 }
 
                 if (workinghours.Text != "")
                 {
                     if (temp)
                     {
-                        set += ", ";
+                        set += " and ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += "working_hours = '" + workinghours.Text + "'";
+                    set += "working_hours = " + workinghours.Text ;
                 }
 
                 

@@ -32,18 +32,16 @@ namespace TravelAgency
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.nHotel = new System.Windows.Forms.TextBox();
             this.NoD = new System.Windows.Forms.TextBox();
-            this.Cost = new System.Windows.Forms.TextBox();
-            this.TypeRoom = new System.Windows.Forms.TextBox();
             this.IDHotel = new System.Windows.Forms.TextBox();
             this.Select = new System.Windows.Forms.Button();
             this.Delete = new System.Windows.Forms.Button();
             this.Update = new System.Windows.Forms.Button();
             this.Insert = new System.Windows.Forms.Button();
+            this.TypeRoom = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,15 +70,6 @@ namespace TravelAgency
             this.label4.Size = new System.Drawing.Size(83, 13);
             this.label4.TabIndex = 40;
             this.label4.Text = "Number of Days";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 106);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "Cost";
             // 
             // label2
             // 
@@ -113,20 +102,6 @@ namespace TravelAgency
             this.NoD.Name = "NoD";
             this.NoD.Size = new System.Drawing.Size(131, 20);
             this.NoD.TabIndex = 32;
-            // 
-            // Cost
-            // 
-            this.Cost.Location = new System.Drawing.Point(132, 106);
-            this.Cost.Name = "Cost";
-            this.Cost.Size = new System.Drawing.Size(131, 20);
-            this.Cost.TabIndex = 31;
-            // 
-            // TypeRoom
-            // 
-            this.TypeRoom.Location = new System.Drawing.Point(132, 70);
-            this.TypeRoom.Name = "TypeRoom";
-            this.TypeRoom.Size = new System.Drawing.Size(131, 20);
-            this.TypeRoom.TabIndex = 30;
             // 
             // IDHotel
             // 
@@ -175,21 +150,27 @@ namespace TravelAgency
             this.Insert.UseVisualStyleBackColor = true;
             this.Insert.Click += new System.EventHandler(this.Insert_Click);
             // 
+            // TypeRoom
+            // 
+            this.TypeRoom.FormattingEnabled = true;
+            this.TypeRoom.Location = new System.Drawing.Point(132, 62);
+            this.TypeRoom.Name = "TypeRoom";
+            this.TypeRoom.Size = new System.Drawing.Size(121, 21);
+            this.TypeRoom.TabIndex = 48;
+            // 
             // Hotel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.TypeRoom);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nHotel);
             this.Controls.Add(this.NoD);
-            this.Controls.Add(this.Cost);
-            this.Controls.Add(this.TypeRoom);
             this.Controls.Add(this.IDHotel);
             this.Controls.Add(this.Select);
             this.Controls.Add(this.Delete);
@@ -209,17 +190,15 @@ namespace TravelAgency
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox nHotel;
         private System.Windows.Forms.TextBox NoD;
-        private System.Windows.Forms.TextBox Cost;
-        private System.Windows.Forms.TextBox TypeRoom;
         private System.Windows.Forms.TextBox IDHotel;
         private System.Windows.Forms.Button Select;
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.Button Update;
         private System.Windows.Forms.Button Insert;
+        private System.Windows.Forms.ComboBox TypeRoom;
     }
 }

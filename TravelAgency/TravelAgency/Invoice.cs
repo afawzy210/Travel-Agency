@@ -16,13 +16,26 @@ namespace TravelAgency
         List<string> LM = new List<string>();
         string data2 = "";
         string iii;
+        string i2;
         
-        public Invoice(string empid)
+        public Invoice(string empid,string idhotel)
         {
             InitializeComponent();
-            iii += "' , " + empid;
+            //iii += "' , " + empid;
+            iii = empid;
+            //i2 += " , " + idhotel;
+            i2 = idhotel;
         }
+        void clear()
+        {
+            invoiceid.Text = "";
+            amount.Text = "";
+            date.Text = "";
+            paymentmethod.Text = "";
+            empid.Text = "";
+            //i2.Text = "";
 
+        }
         private void insert_Click(object sender, EventArgs e)
         {
             //string data2 = "";
@@ -46,14 +59,16 @@ namespace TravelAgency
             data2 += " , " + amount.Text;
             data2 += " , '" + date.Text;
             data2 += "', '" + paymentmethod.Text;
-            data2 +=iii;
-            
+            data2 += "' , " + iii;
+            data2 += " , " + i2;
+
 
 
             I.Insert(data2);
 
             MessageBox.Show("Added is complete");
             //iii = "a";
+            clear();
 
         }
 
@@ -153,8 +168,20 @@ namespace TravelAgency
                 }
                 set += "emp_id = '" + empid.Text + "'";
             }
+            if (i2 != "")
+            {
+                if (temp)
+                {
+                    set += ", ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "Id_hotel = " + i2 ;
+            }
 
-            
+
 
 
 
@@ -193,7 +220,7 @@ namespace TravelAgency
                 {
                     temp = true;
                 }
-                set += "amount = '" + amount.Text + "'";
+                set += "amount = " + amount.Text ;
             }
 
             if (date.Text != "")
@@ -232,7 +259,19 @@ namespace TravelAgency
                 {
                     temp = true;
                 }
-                set += "emp_id = '" + empid.Text + "'";
+                set += "emp_id = " + empid.Text ;
+            }
+            if (i2 != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "Id_hotel = " + i2 ;
             }
 
 
@@ -308,8 +347,20 @@ namespace TravelAgency
                 }
                 set += "Emp_id = " + empid.Text ;
             }
+            if (i2 != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "Id_hotel = " + i2;
+            }
 
-            
+
 
             //if (invoiceid.Text != "")
             //{
