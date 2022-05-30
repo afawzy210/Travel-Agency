@@ -1,5 +1,4 @@
-﻿
-namespace TravelAgency
+﻿namespace TravelAgency
 {
     partial class Customer
     {

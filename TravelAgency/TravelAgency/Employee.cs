@@ -30,16 +30,7 @@ namespace TravelAgency
             string data = "";
             List<List<string>> R = E.Read();
 
-<<<<<<< HEAD
-            //if (R.Count == 0)
-            //{
-            //    data += 1;
-            //}
-            //else
-            //{
-            //    List<string> C = R[R.Count - 1];
-            //    int LID = Int32.Parse(C[0]) + 1;
-=======
+
             if (R.Count == 0)
             {
                 data += 1;//ay kalam
@@ -48,23 +39,10 @@ namespace TravelAgency
             {
                 List<string> C = R[R.Count - 1];
                 int LID = Int32.Parse(C[0]) + 1;
->>>>>>> a071ee3684c22c8ea5dfd8faa95ae72434576de1
-
-            //    data += LID;
-
-            //    data += LID;
-            //}
-
-            //bool temp = false;
-<<<<<<< HEAD
-            //ay kalam
-
-            data +=id.Text;
-=======
+                data += LID;
+            }
 
 
-            //data += ("' , " + id.Text);
->>>>>>> a071ee3684c22c8ea5dfd8faa95ae72434576de1
             data += " , '" + sex.Text;
             data += "' , '" + job.Text;
             data += "' , '" + address.Text;
@@ -214,10 +192,6 @@ namespace TravelAgency
                 }
                 else
                 {
-<<<<<<< HEAD
-=======
-                    set += "Emp_id = " + id.Text;
->>>>>>> a071ee3684c22c8ea5dfd8faa95ae72434576de1
                     temp = true;
                 }
                 set += "Emp_id = " + id.Text;
