@@ -94,6 +94,7 @@ namespace TravelAgency
             LM.Add("date");
             LM.Add("payment method");
             LM.Add("EMP ID");
+            LM.Add("Hotel ID");
             
 
             dataGridView1.DataSource = I.GetTable(LM, Table);

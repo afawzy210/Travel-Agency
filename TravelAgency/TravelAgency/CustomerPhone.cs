@@ -19,14 +19,14 @@ namespace TravelAgency
         {
             InitializeComponent();
             ssn = cusn;
+            customerssn.Text = cusn;
         }
 
         private void CustomerPhone_Load(object sender, EventArgs e)
         {
             List<List<string>> Table = CP.Read();
-            LH.Add("SSN");
             LH.Add("phone");
-
+            LH.Add("SSN");
 
             dataGridView1.DataSource = CP.GetTable(LH, Table);
         }
