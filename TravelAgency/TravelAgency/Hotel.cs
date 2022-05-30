@@ -14,23 +14,30 @@ namespace TravelAgency
     {
         Main m = new Main("Hotel");
         List<string> LH = new List<string>();
-
+        private string empid;
+        public string iddd;
         void clear()
         {
             IDHotel.Text = "";
             TypeRoom.Text = "";
-            Cost.Text = "";
+            //Cost.Text = "";
             NoD.Text = "";
             nHotel.Text = "";
         }
 
-        public Hotel()
+        public Hotel( string idemp)
         {
             InitializeComponent();
+            empid = idemp;
         }
 
         private void Hotel_Load(object sender, EventArgs e)
         {
+            TypeRoom.Items.Add("single");
+            TypeRoom.Items.Add("double");
+            TypeRoom.Items.Add("suite");
+
+
             List<List<string>> Table = m.Read();
 
             LH.Add("ID Hotel");
@@ -57,11 +64,24 @@ namespace TravelAgency
                 int LID = Int32.Parse(C[0]) + 1;
 
                 data += LID;
+                 iddd = data[0].ToString();
+            }
+
+            
+            data += " , '" + TypeRoom.Text;
+            if (TypeRoom.Text=="single") {
+                data += "' , " + 50;
+            }
+            if (TypeRoom.Text == "double")
+            {
+                data += "' , " + 100;
+            }
+            if (TypeRoom.Text == "suite")
+            {
+                data += "' , " + 200;
             }
 
 
-            data += " , '" + TypeRoom.Text;
-            data += "' , " + Cost.Text;
             data += " , " + NoD.Text;
             data += " , '" + nHotel.Text + "'";
 
@@ -71,6 +91,8 @@ namespace TravelAgency
             MessageBox.Show("Added is complete");
 
             clear();
+            Invoice form = new Invoice(empid,iddd);
+            form.ShowDialog();
         }
 
         private void Select_Click(object sender, EventArgs e)
@@ -99,18 +121,18 @@ namespace TravelAgency
                 set += "type_room LIKE '" + TypeRoom.Text + "'";
             }
 
-            if (Cost.Text != "")
-            {
-                if (temp)
-                {
-                    set += "and ";
-                }
-                else
-                {
-                    temp = true;
-                }
-                set += "cost = " + Cost.Text;
-            }
+            //if (Cost.Text != "")
+            //{
+            //    if (temp)
+            //    {
+            //        set += "and ";
+            //    }
+            //    else
+            //    {
+            //        temp = true;
+            //    }
+            //    set += "cost = " + Cost.Text;
+            //}
 
             if (NoD.Text != "")
             {
@@ -160,18 +182,18 @@ namespace TravelAgency
                 temp = true;
             }
 
-            if (Cost.Text != "")
-            {
-                if (temp)
-                {
-                    set += ", ";
-                }
-                else
-                {
-                    temp = true;
-                }
-                set += "cost = " + Cost.Text;
-            }
+            //if (Cost.Text != "")
+            //{
+            //    if (temp)
+            //    {
+            //        set += ", ";
+            //    }
+            //    else
+            //    {
+            //        temp = true;
+            //    }
+            //    set += "cost = " + Cost.Text;
+            //}
 
             if (NoD.Text != "")
             {
@@ -232,18 +254,18 @@ namespace TravelAgency
                 set += "type_room LIKE '" + TypeRoom.Text + "'";
             }
 
-            if (Cost.Text != "")
-            {
-                if (temp)
-                {
-                    set += "and ";
-                }
-                else
-                {
-                    temp = true;
-                }
-                set += "cost = " + Cost.Text;
-            }
+            //if (Cost.Text != "")
+            //{
+            //    if (temp)
+            //    {
+            //        set += "and ";
+            //    }
+            //    else
+            //    {
+            //        temp = true;
+            //    }
+            //    set += "cost = " + Cost.Text;
+            //}
 
             if (NoD.Text != "")
             {
