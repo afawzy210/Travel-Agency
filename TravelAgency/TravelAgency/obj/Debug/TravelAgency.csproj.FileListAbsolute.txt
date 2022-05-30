@@ -20,3 +20,6 @@ C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\obj
 D:\SQL\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.Customer.resources
 C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.Employee.resources
 C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.Invoice.resources
+D:\SQL\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.Employee.resources
+D:\SQL\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.Invoice.resources
+D:\SQL\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.Hotel.resources

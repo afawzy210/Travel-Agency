@@ -21,6 +21,19 @@ namespace TravelAgency
             InitializeComponent();
         }
 
+        void clear() 
+        {
+            SSN.Text = "";
+            Fname.Text = "";
+            Lname.Text = "";
+            Address.Text = "";
+            Email.Text = "";
+            PassID.Text = "";
+            Dob.Text = "";
+            Sex.Text = "";
+            Job.Text = "";
+        }
+
 
         private void Customer_Load(object sender, EventArgs e)
         {
@@ -41,9 +54,12 @@ namespace TravelAgency
 
         private void button1_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
 
             Main m = new Main("customer");
 
+=======
+>>>>>>> a071ee3684c22c8ea5dfd8faa95ae72434576de1
             string data = "";
             List<List<string>> R = m.Read();
 
@@ -56,6 +72,7 @@ namespace TravelAgency
             //    List<string> C = R[R.Count - 1];
             //    int LID = Int32.Parse(C[0]) + 1;
 
+<<<<<<< HEAD
             //    data += LID;
 
             //    data += LID ;
@@ -63,6 +80,12 @@ namespace TravelAgency
 
 
             data += SSN.Text;
+=======
+                data += LID ;
+            }
+            
+            
+>>>>>>> a071ee3684c22c8ea5dfd8faa95ae72434576de1
             data += " , '" + Fname.Text;
             data += "' , '" + Lname.Text;
             data += "' , '" + Address.Text;
@@ -71,6 +94,7 @@ namespace TravelAgency
             data += " , '" + Dob.Text;
             data += "' , '" + Sex.Text;
             data += "' , '" + Job.Text + "'";
+<<<<<<< HEAD
 
             
             
@@ -83,6 +107,8 @@ namespace TravelAgency
             //data += "' , '" + Sex.Text;
             //data += "' , '" + Job.Text + "'";
 
+=======
+>>>>>>> a071ee3684c22c8ea5dfd8faa95ae72434576de1
 
             m.Insert(data);
 
@@ -198,11 +224,15 @@ namespace TravelAgency
                     {
                         temp = true;
                     }
+<<<<<<< HEAD
 
                     set += "job = '" + Job.Text + "'";
 
                     set += "job = '" + Job.Text + "'";
 
+=======
+                    set += "job = '" + Job.Text + "'";
+>>>>>>> a071ee3684c22c8ea5dfd8faa95ae72434576de1
                 }
 
                 m.Update("SSN = " + SSN.Text, set);
@@ -211,7 +241,11 @@ namespace TravelAgency
             //}
             //else
             //{
+<<<<<<< HEAD
                // MessageBox.Show("Not found");
+=======
+            //    MessageBox.Show("Not found");
+>>>>>>> a071ee3684c22c8ea5dfd8faa95ae72434576de1
             //}
 
         }
@@ -235,7 +269,7 @@ namespace TravelAgency
             {
                 if (temp)
                 {
-                    set += ", ";
+                    set += "and ";
                 }
                 else
                 {
@@ -248,7 +282,7 @@ namespace TravelAgency
             {
                 if (temp)
                 {
-                    set += ", ";
+                    set += "and ";
                 }
                 else
                 {
@@ -261,7 +295,7 @@ namespace TravelAgency
             {
                 if (temp)
                 {
-                    set += ", ";
+                    set += "and ";
                 }
                 else
                 {
@@ -274,7 +308,7 @@ namespace TravelAgency
             {
                 if (temp)
                 {
-                    set += ", ";
+                    set += "and ";
                 }
                 else
                 {
@@ -287,10 +321,11 @@ namespace TravelAgency
             {
                 if (temp)
                 {
-                    set += ", ";
+                    set += "and ";
                 }
                 else
                 {
+<<<<<<< HEAD
 
                     if (temp)
                     {
@@ -304,6 +339,9 @@ namespace TravelAgency
 
                     temp = true;
 
+=======
+                    temp = true;
+>>>>>>> a071ee3684c22c8ea5dfd8faa95ae72434576de1
                 }
                 set += "passport_ID = " + PassID.Text;
             }
@@ -312,7 +350,7 @@ namespace TravelAgency
             {
                 if (temp)
                 {
-                    set += ", ";
+                    set += "and ";
                 }
                 else
                 {
@@ -325,7 +363,7 @@ namespace TravelAgency
             {
                 if (temp)
                 {
-                    set += ", ";
+                    set += "and ";
                 }
                 else
                 {
@@ -338,7 +376,7 @@ namespace TravelAgency
             {
                 if (temp)
                 {
-                    set += ", ";
+                    set += "and ";
                 }
                 else
                 {
@@ -446,7 +484,11 @@ namespace TravelAgency
                 {
                     temp = true;
                 }
+<<<<<<< HEAD
                 set += "birthdate = '" + Dob.Text + "'";
+=======
+                set += "birthdate like '" + Dob.Text + "'";
+>>>>>>> a071ee3684c22c8ea5dfd8faa95ae72434576de1
             }
 
             if (Sex.Text != "")
