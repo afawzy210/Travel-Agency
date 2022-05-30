@@ -41,42 +41,28 @@ namespace TravelAgency
 
         private void button1_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            //hi
-            Main m = new Main("customer");
-=======
 
->>>>>>> f5f4df753dcf345ab14e375b8d339628a4fb9df5
+            Main m = new Main("customer");
+
             string data = "";
             List<List<string>> R = m.Read();
 
-            if (R.Count == 0)
-            {
-                data += 1;
-            }
-            else
-            {
-                List<string> C = R[R.Count - 1];
-                int LID = Int32.Parse(C[0]) + 1;
+            //if (R.Count == 0)
+            //{
+            //    data += 1;
+            //}
+            //else
+            //{
+            //    List<string> C = R[R.Count - 1];
+            //    int LID = Int32.Parse(C[0]) + 1;
 
-                data += LID;
+            //    data += LID;
 
-                data += LID ;
-            }
+            //    data += LID ;
+            //}
 
 
-
-            data += (" , '" + Fname.Text);
-            data += ("' , '" + Lname.Text);
-            data += ("' , '" + Address.Text);
-            data += ("' , '" + Email.Text);
-            data += ("' , " + PassID.Text);
-            data += (" , '" + Dob.Text);
-            data += ("' , '" + Sex.Text);
-            data += ("' , '" + Job.Text + "'");
-=======
-            
-            
+            data += SSN.Text;
             data += " , '" + Fname.Text;
             data += "' , '" + Lname.Text;
             data += "' , '" + Address.Text;
@@ -85,7 +71,18 @@ namespace TravelAgency
             data += " , '" + Dob.Text;
             data += "' , '" + Sex.Text;
             data += "' , '" + Job.Text + "'";
->>>>>>> f5f4df753dcf345ab14e375b8d339628a4fb9df5
+
+            
+            
+            //data += " , '" + Fname.Text;
+            //data += "' , '" + Lname.Text;
+            //data += "' , '" + Address.Text;
+            //data += "' , '" + Email.Text;
+            //data += "' , " + PassID.Text;
+            //data += " , '" + Dob.Text;
+            //data += "' , '" + Sex.Text;
+            //data += "' , '" + Job.Text + "'";
+
 
             m.Insert(data);
 
@@ -102,8 +99,8 @@ namespace TravelAgency
 
             List<List<string>> R = m.Read();
 
-            if (Int32.Parse(SSN.Text) > 0 && Int32.Parse(SSN.Text) <= R.Count)
-            {
+            //if (Int32.Parse(SSN.Text) > 0 && Int32.Parse(SSN.Text) <= R.Count)
+            //{
                 string set = "";
                 bool temp = false;
 
@@ -201,21 +198,21 @@ namespace TravelAgency
                     {
                         temp = true;
                     }
-<<<<<<< HEAD
-                    set += ("job = '" + Job.Text + "'");
-=======
+
                     set += "job = '" + Job.Text + "'";
->>>>>>> f5f4df753dcf345ab14e375b8d339628a4fb9df5
+
+                    set += "job = '" + Job.Text + "'";
+
                 }
 
                 m.Update("SSN = " + SSN.Text, set);
 
                 MessageBox.Show("Updated is complete");
-            }
-            else
-            {
-                MessageBox.Show("Not found");
-            }
+            //}
+            //else
+            //{
+               // MessageBox.Show("Not found");
+            //}
 
         }
 
@@ -294,19 +291,19 @@ namespace TravelAgency
                 }
                 else
                 {
-<<<<<<< HEAD
+
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("job = '" + Job.Text + "'");
-=======
+                    set += "job = '" + Job.Text + "'";
+
                     temp = true;
->>>>>>> f5f4df753dcf345ab14e375b8d339628a4fb9df5
+
                 }
                 set += "passport_ID = " + PassID.Text;
             }
@@ -359,9 +356,135 @@ namespace TravelAgency
 
         private void button4_Click(object sender, EventArgs e)
         {
+            
+
+            //dataGridView1.DataSource = m.GetTable(LH, Table);
+
             List<List<string>> Table = m.Read();
 
+            string set = "";
+            bool temp = false;
+
+            if (SSN.Text != "")
+            {
+                set += "SSN = " + SSN.Text;
+                temp = true;
+            }
+
+            if (Fname.Text != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "F_Name LIKE '" + Fname.Text + "'";
+            }
+
+            if (Lname.Text != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "L_Name LIKE '" + Lname.Text + "'";
+            }
+
+            if (Address.Text != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "cus_address LIKE '" + Address.Text + "'";
+            }
+
+            if (Email.Text != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "email LIKE '" + Email.Text + "'";
+            }
+
+            if (PassID.Text != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "passport_ID = " + PassID.Text;
+            }
+
+            if (Dob.Text != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "birthdate = '" + Dob.Text + "'";
+            }
+
+            if (Sex.Text != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "sex LIKE '" + Sex.Text + "'";
+            }
+
+            if (Job.Text != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "job LIKE '" + Job.Text + "'";
+            }
+
+            Table = m.Read(set);
+
             dataGridView1.DataSource = m.GetTable(LH, Table);
+
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

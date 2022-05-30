@@ -12,6 +12,8 @@ namespace TravelAgency
 {
     public partial class Employee : Form
     {
+        Main E = new Main("Employee");
+        List<string> LH = new List<string>();
         public Employee()
         {
             InitializeComponent();
@@ -24,41 +26,45 @@ namespace TravelAgency
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Main E = new Main("Employee");
+            
             string data = "";
             List<List<string>> R = E.Read();
 
-            if (R.Count == 0)
-            {
-                data += 1;
-            }
-            else
-            {
-                List<string> C = R[R.Count - 1];
-                int LID = Int32.Parse(C[0]) + 1;
+            //if (R.Count == 0)
+            //{
+            //    data += 1;
+            //}
+            //else
+            //{
+            //    List<string> C = R[R.Count - 1];
+            //    int LID = Int32.Parse(C[0]) + 1;
 
-                data += LID;
+            //    data += LID;
 
-                data += LID;
-            }
+            //    data += LID;
+            //}
 
             //bool temp = false;
+            //ay kalam
 
-
-            //data += ("' , " + id.Text);
-            data += (" , '" + sex.Text);
-            data += ("' , '" + job.Text);
-            data += ("' , '" + address.Text);
-            data += ("' , '" + name.Text );
-            data += ("' , '" + password.Text);
-            data += ("' , " + salairy.Text);
-            data += (" , " + workinghours.Text);
+            data +=id.Text;
+            data += " , '" + sex.Text;
+            data += "' , '" + job.Text;
+            data += "' , '" + address.Text;
+            data += "' , '" + name.Text ;
+            data += "' , '" + password.Text;
+            data += "' , " + salairy.Text;
+            data += " , " + workinghours.Text;
             
             
 
             E.Insert(data);
 
             MessageBox.Show("Added is complete");
+            Invoice form = new Invoice(id.Text);
+            form.ShowDialog();
+            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -67,14 +73,14 @@ namespace TravelAgency
 
             List<List<string>> R = E.Read();
 
-            if (Int32.Parse(id.Text) > 0 && Int32.Parse(id.Text) <= R.Count)
-            {
+            //if (Int32.Parse(id.Text) > 0 && Int32.Parse(id.Text) <= R.Count)
+            //{
                 string set = "";
                 bool temp = false;
 
                 if (sex.Text != "")
                 {
-                    set += ("sex = '" + sex.Text + "'");
+                    set += "sex = '" + sex.Text + "'";
                     temp = true;
                 }
 
@@ -82,78 +88,78 @@ namespace TravelAgency
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("job = '" + job.Text + "'");
+                    set += "job = '" + job.Text + "'";
                 }
 
                 if (address.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("EMP_address = '" + address.Text + "'");
+                    set += "EMP_address = '" + address.Text + "'";
                 }
 
                 if (name.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("EMP_name = '" + name.Text + "'");
+                    set += "EMP_name = '" + name.Text + "'";
                 }
 
                 if (password.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("emp_password = '" + password.Text + "'");
+                    set += "emp_password = '" + password.Text + "'";
                 }
 
                 if (salairy.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("salairy = '" + salairy.Text + "'");
+                    set += "salairy = '" + salairy.Text + "'";
                 }
 
                 if (workinghours.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("working_hours = '" + workinghours.Text + "'");
+                    set += "working_hours = '" + workinghours.Text + "'";
                 }
 
                 
@@ -161,119 +167,130 @@ namespace TravelAgency
                 E.Update("Emp_id = " + id.Text, set);
 
                 MessageBox.Show("Updated is complete");
-            }
-            else
-            {
-                MessageBox.Show("Not found");
-            }
+            //}
+            //else
+            //{
+                //MessageBox.Show("Not found");
+            ///}
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Main E = new Main("customer");
+            Main E = new Main("Employee");
 
             List<List<string>> R = E.Read();
 
-            if (Int32.Parse(id.Text) > 0 && Int32.Parse(id.Text) <= R.Count)
-            {
+            
                 string set = "";
                 bool temp = false;
 
-                if (id.Text != "")
+            //if (id.Text != "")
+            //{
+            //    set += "Emp_id = " + id.Text;
+            //    temp = true;
+            //}
+            if (id.Text != "")
+            {
+                if (temp)
                 {
-                    set += ("Emp_id = " + id.Text);
+                    set += ", ";
+                }
+                else
+                {
                     temp = true;
                 }
+                set += "Emp_id = " + id.Text;
+            }
 
-                if (sex.Text != "")
+            if (sex.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("sex = '" + sex.Text + "'");
+                    set += "sex = '" + sex.Text + "'";
                 }
 
                 if (job.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("job = '" + job.Text + "'");
+                    set += "job = '" + job.Text + "'";
                 }
 
                 if (address.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("EMP_address = '" + address.Text + "'");
+                    set += "EMP_address = '" + address.Text + "'";
                 }
 
                 if (name.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("EMP_name = '" + name.Text + "'");
+                    set += "EMP_name = '" + name.Text + "'";
                 }
 
                 if (password.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("emp_password = " + password.Text);
+                    set += "emp_password = " + password.Text;
                 }
 
                 if (salairy.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("salairy = '" + salairy.Text + "'");
+                    set += "salairy = '" + salairy.Text + "'";
                 }
 
                 if (workinghours.Text != "")
                 {
                     if (temp)
                     {
-                        set += (", ");
+                        set += ", ";
                     }
                     else
                     {
                         temp = true;
                     }
-                    set += ("working_hours = '" + workinghours.Text + "'");
+                    set += "working_hours = '" + workinghours.Text + "'";
                 }
 
                 
@@ -281,11 +298,145 @@ namespace TravelAgency
                 E.Delete(set);
 
                 MessageBox.Show("Delete is complete");
-            }
-            else
+            
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Employee_Load(object sender, EventArgs e)
+        {
+            List<List<string>> Table = E.Read();
+            LH.Add("Employee id");
+            LH.Add("sex");
+            LH.Add("job");
+            LH.Add("address");
+            LH.Add("Name");
+            LH.Add("password");
+            LH.Add("salairy");
+            LH.Add("working hours");
+            
+
+            dataGridView1.DataSource = E.GetTable(LH, Table);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            List<List<string>> Table = E.Read();
+
+            string set = "";
+            bool temp = false;
+
+            //if (id.Text != "")
+            //{
+            //    set += "Emp_id = " + id.Text;
+            //    temp = true;
+            //}
+            if (id.Text != "")
             {
-                MessageBox.Show("Not found");
+                
+                set += "Emp_id = " + id.Text;
+                temp = true;
             }
+
+            if (sex.Text != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "sex LIKE '" + sex.Text + "'";
+            }
+
+            if (job.Text != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "Job LIKE '" + job.Text + "'";
+            }
+
+            if (address.Text != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "EMP_address LIKE '" + address.Text + "'";
+            }
+
+            if (name.Text != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "EMP_name LIKE '" + name.Text + "'";
+            }
+
+            if (password.Text != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "emp_password LIKE '" + password.Text + "'";
+            }
+
+            if (salairy.Text != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "salairy = " + salairy.Text ;
+            }
+
+            if (workinghours.Text != "")
+            {
+                if (temp)
+                {
+                    set += "and ";
+                }
+                else
+                {
+                    temp = true;
+                }
+                set += "working_hours = " + workinghours.Text ;
+            }
+
+            
+
+            Table = E.Read(set);
+
+            dataGridView1.DataSource = E.GetTable(LH, Table);
         }
     }
 }
