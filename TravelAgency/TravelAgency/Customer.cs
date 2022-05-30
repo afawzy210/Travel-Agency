@@ -21,6 +21,19 @@ namespace TravelAgency
             InitializeComponent();
         }
 
+        void clear() 
+        {
+            SSN.Text = "";
+            Fname.Text = "";
+            Lname.Text = "";
+            Address.Text = "";
+            Email.Text = "";
+            PassID.Text = "";
+            Dob.Text = "";
+            Sex.Text = "";
+            Job.Text = "";
+        }
+
 
         private void Customer_Load(object sender, EventArgs e)
         {
@@ -53,8 +66,6 @@ namespace TravelAgency
                 List<string> C = R[R.Count - 1];
                 int LID = Int32.Parse(C[0]) + 1;
 
-                data += LID;
-
                 data += LID ;
             }
             
@@ -83,8 +94,8 @@ namespace TravelAgency
 
             List<List<string>> R = m.Read();
 
-            if (Int32.Parse(SSN.Text) > 0 && Int32.Parse(SSN.Text) <= R.Count)
-            {
+            //if (Int32.Parse(SSN.Text) > 0 && Int32.Parse(SSN.Text) <= R.Count)
+            //{
                 string set = "";
                 bool temp = false;
 
@@ -188,11 +199,11 @@ namespace TravelAgency
                 m.Update("SSN = " + SSN.Text, set);
 
                 MessageBox.Show("Updated is complete");
-            }
-            else
-            {
-                MessageBox.Show("Not found");
-            }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Not found");
+            //}
 
         }
 

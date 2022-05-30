@@ -35,15 +35,15 @@ namespace TravelAgency
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Email = new System.Windows.Forms.TextBox();
-            this.PassID = new System.Windows.Forms.TextBox();
-            this.SSN = new System.Windows.Forms.TextBox();
-            this.Lname = new System.Windows.Forms.TextBox();
-            this.Fname = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.nHotel = new System.Windows.Forms.TextBox();
+            this.NoD = new System.Windows.Forms.TextBox();
+            this.Cost = new System.Windows.Forms.TextBox();
+            this.TypeRoom = new System.Windows.Forms.TextBox();
+            this.IDHotel = new System.Windows.Forms.TextBox();
+            this.Select = new System.Windows.Forms.Button();
+            this.Delete = new System.Windows.Forms.Button();
+            this.Update = new System.Windows.Forms.Button();
+            this.Insert = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +58,7 @@ namespace TravelAgency
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(53, 208);
+            this.label5.Location = new System.Drawing.Point(43, 204);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 13);
             this.label5.TabIndex = 41;
@@ -100,76 +100,80 @@ namespace TravelAgency
             this.label1.TabIndex = 37;
             this.label1.Text = "ID Hotel";
             // 
-            // Email
+            // nHotel
             // 
-            this.Email.Location = new System.Drawing.Point(132, 201);
-            this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(131, 20);
-            this.Email.TabIndex = 33;
+            this.nHotel.Location = new System.Drawing.Point(132, 201);
+            this.nHotel.Name = "nHotel";
+            this.nHotel.Size = new System.Drawing.Size(131, 20);
+            this.nHotel.TabIndex = 33;
             // 
-            // PassID
+            // NoD
             // 
-            this.PassID.Location = new System.Drawing.Point(132, 152);
-            this.PassID.Name = "PassID";
-            this.PassID.Size = new System.Drawing.Size(131, 20);
-            this.PassID.TabIndex = 32;
+            this.NoD.Location = new System.Drawing.Point(132, 152);
+            this.NoD.Name = "NoD";
+            this.NoD.Size = new System.Drawing.Size(131, 20);
+            this.NoD.TabIndex = 32;
             // 
-            // SSN
+            // Cost
             // 
-            this.SSN.Location = new System.Drawing.Point(132, 106);
-            this.SSN.Name = "SSN";
-            this.SSN.Size = new System.Drawing.Size(131, 20);
-            this.SSN.TabIndex = 31;
+            this.Cost.Location = new System.Drawing.Point(132, 106);
+            this.Cost.Name = "Cost";
+            this.Cost.Size = new System.Drawing.Size(131, 20);
+            this.Cost.TabIndex = 31;
             // 
-            // Lname
+            // TypeRoom
             // 
-            this.Lname.Location = new System.Drawing.Point(132, 70);
-            this.Lname.Name = "Lname";
-            this.Lname.Size = new System.Drawing.Size(131, 20);
-            this.Lname.TabIndex = 30;
+            this.TypeRoom.Location = new System.Drawing.Point(132, 70);
+            this.TypeRoom.Name = "TypeRoom";
+            this.TypeRoom.Size = new System.Drawing.Size(131, 20);
+            this.TypeRoom.TabIndex = 30;
             // 
-            // Fname
+            // IDHotel
             // 
-            this.Fname.Location = new System.Drawing.Point(132, 26);
-            this.Fname.Name = "Fname";
-            this.Fname.Size = new System.Drawing.Size(131, 20);
-            this.Fname.TabIndex = 29;
+            this.IDHotel.Location = new System.Drawing.Point(132, 26);
+            this.IDHotel.Name = "IDHotel";
+            this.IDHotel.Size = new System.Drawing.Size(131, 20);
+            this.IDHotel.TabIndex = 29;
             // 
-            // button4
+            // Select
             // 
-            this.button4.Location = new System.Drawing.Point(246, 266);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(72, 22);
-            this.button4.TabIndex = 28;
-            this.button4.Text = "Select";
-            this.button4.UseVisualStyleBackColor = true;
+            this.Select.Location = new System.Drawing.Point(246, 266);
+            this.Select.Name = "Select";
+            this.Select.Size = new System.Drawing.Size(72, 22);
+            this.Select.TabIndex = 28;
+            this.Select.Text = "Select";
+            this.Select.UseVisualStyleBackColor = true;
+            this.Select.Click += new System.EventHandler(this.Select_Click);
             // 
-            // button3
+            // Delete
             // 
-            this.button3.Location = new System.Drawing.Point(168, 266);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(72, 22);
-            this.button3.TabIndex = 27;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Delete.Location = new System.Drawing.Point(168, 266);
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(72, 22);
+            this.Delete.TabIndex = 27;
+            this.Delete.Text = "Delete";
+            this.Delete.UseVisualStyleBackColor = true;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
-            // button2
+            // Update
             // 
-            this.button2.Location = new System.Drawing.Point(90, 266);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(72, 22);
-            this.button2.TabIndex = 26;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Update.Location = new System.Drawing.Point(90, 266);
+            this.Update.Name = "Update";
+            this.Update.Size = new System.Drawing.Size(72, 22);
+            this.Update.TabIndex = 26;
+            this.Update.Text = "Update";
+            this.Update.UseVisualStyleBackColor = true;
+            this.Update.Click += new System.EventHandler(this.Update_Click);
             // 
-            // button1
+            // Insert
             // 
-            this.button1.Location = new System.Drawing.Point(12, 266);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(72, 22);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Insert";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Insert.Location = new System.Drawing.Point(12, 266);
+            this.Insert.Name = "Insert";
+            this.Insert.Size = new System.Drawing.Size(72, 22);
+            this.Insert.TabIndex = 25;
+            this.Insert.Text = "Insert";
+            this.Insert.UseVisualStyleBackColor = true;
+            this.Insert.Click += new System.EventHandler(this.Insert_Click);
             // 
             // Hotel
             // 
@@ -182,15 +186,15 @@ namespace TravelAgency
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Email);
-            this.Controls.Add(this.PassID);
-            this.Controls.Add(this.SSN);
-            this.Controls.Add(this.Lname);
-            this.Controls.Add(this.Fname);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.nHotel);
+            this.Controls.Add(this.NoD);
+            this.Controls.Add(this.Cost);
+            this.Controls.Add(this.TypeRoom);
+            this.Controls.Add(this.IDHotel);
+            this.Controls.Add(this.Select);
+            this.Controls.Add(this.Delete);
+            this.Controls.Add(this.Update);
+            this.Controls.Add(this.Insert);
             this.Name = "Hotel";
             this.Text = "Hotel";
             this.Load += new System.EventHandler(this.Hotel_Load);
@@ -208,14 +212,14 @@ namespace TravelAgency
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox Email;
-        private System.Windows.Forms.TextBox PassID;
-        private System.Windows.Forms.TextBox SSN;
-        private System.Windows.Forms.TextBox Lname;
-        private System.Windows.Forms.TextBox Fname;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox nHotel;
+        private System.Windows.Forms.TextBox NoD;
+        private System.Windows.Forms.TextBox Cost;
+        private System.Windows.Forms.TextBox TypeRoom;
+        private System.Windows.Forms.TextBox IDHotel;
+        private System.Windows.Forms.Button Select;
+        private System.Windows.Forms.Button Delete;
+        private System.Windows.Forms.Button Update;
+        private System.Windows.Forms.Button Insert;
     }
 }
