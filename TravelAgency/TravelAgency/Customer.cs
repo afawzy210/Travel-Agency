@@ -192,9 +192,15 @@ namespace TravelAgency
                     set += "job = '" + Job.Text + "'";
                 }
 
+            if (set != "") 
+            {
                 m.Update("SSN = " + SSN.Text, set);
 
                 MessageBox.Show("Updated is complete");
+            }
+
+            CustomerPhone form = new CustomerPhone(SSN.Text);
+            form.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -202,7 +208,7 @@ namespace TravelAgency
 
             List<List<string>> R = m.Read();
 
-            
+
             string set = "";
             bool temp = false;
 
@@ -278,9 +284,9 @@ namespace TravelAgency
             }
 
 
-               
-                
-            
+
+
+
 
             if (Dob.Text != "")
             {
@@ -319,6 +325,16 @@ namespace TravelAgency
                     temp = true;
                 }
                 set += "job LIKE '" + Job.Text + "'";
+            }
+
+            List<List<string>> Del = m.Read(set);
+            Main dM = new Main("Customer_phone");
+
+            for (int i = 0; i < Del.Count; i++) 
+            {
+                List<string> ptrvl = Del[i];
+
+                dM.Delete("SSN = " + ptrvl[0]);
             }
 
             m.Delete(set);
