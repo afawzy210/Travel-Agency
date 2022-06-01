@@ -25,3 +25,6 @@ D:\SQL\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.Invoice.re
 D:\SQL\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.Hotel.resources
 C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.Hotel.resources
 C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.CustomerPhone.resources
+C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.Trip.resources
+C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.book.resources
+C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.LogIn.resources

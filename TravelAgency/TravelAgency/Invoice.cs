@@ -68,7 +68,7 @@ namespace TravelAgency
 
             MessageBox.Show("Added is complete");
             //iii = "a";
-            clear();
+            //clear();
 
         }
 
@@ -94,7 +94,8 @@ namespace TravelAgency
             LM.Add("date");
             LM.Add("payment method");
             LM.Add("EMP ID");
-            
+            LM.Add("Id_hotel");
+
 
             dataGridView1.DataSource = I.GetTable(LM, Table);
 
