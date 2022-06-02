@@ -43,7 +43,6 @@ namespace TravelAgency
             
             string data = "";
             List<List<string>> R = E.Read();
-
             if (R.Count == 0)
             {
                 data += 1;//ay kalam
@@ -53,6 +52,8 @@ namespace TravelAgency
                 List<string> C = R[R.Count - 1];
                 int LID = Int32.Parse(C[0]) + 1;
                 data += LID;
+
+            
                 idemp += data[0].ToString();
 
             }

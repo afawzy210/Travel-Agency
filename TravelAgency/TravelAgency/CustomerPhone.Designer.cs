@@ -34,9 +34,9 @@
             this.search = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.customerssn = new System.Windows.Forms.TextBox();
             this.phone = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.customerssn = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,13 +98,6 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Phone";
             // 
-            // customerssn
-            // 
-            this.customerssn.Location = new System.Drawing.Point(143, 67);
-            this.customerssn.Name = "customerssn";
-            this.customerssn.Size = new System.Drawing.Size(100, 20);
-            this.customerssn.TabIndex = 6;
-            // 
             // phone
             // 
             this.phone.Location = new System.Drawing.Point(143, 151);
@@ -120,14 +113,22 @@
             this.dataGridView1.Size = new System.Drawing.Size(406, 265);
             this.dataGridView1.TabIndex = 8;
             // 
+            // customerssn
+            // 
+            this.customerssn.AutoSize = true;
+            this.customerssn.Location = new System.Drawing.Point(140, 70);
+            this.customerssn.Name = "customerssn";
+            this.customerssn.Size = new System.Drawing.Size(0, 13);
+            this.customerssn.TabIndex = 9;
+            // 
             // CustomerPhone
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.customerssn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.phone);
-            this.Controls.Add(this.customerssn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.search);
@@ -151,8 +152,8 @@
         private System.Windows.Forms.Button search;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox customerssn;
         private System.Windows.Forms.TextBox phone;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label customerssn;
     }
 }

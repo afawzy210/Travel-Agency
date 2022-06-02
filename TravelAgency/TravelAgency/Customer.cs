@@ -55,12 +55,8 @@ namespace TravelAgency
         private void button1_Click(object sender, EventArgs e)
         {
 
-
-            Main m = new Main("customer");
-
-
             string data = "";
-            List<List<string>> R = m.Read();
+
 
             
 
@@ -72,6 +68,8 @@ namespace TravelAgency
             
             
 
+
+            data += SSN.Text;         
             data += " , '" + Fname.Text;
             data += "' , '" + Lname.Text;
             data += "' , '" + Address.Text;
@@ -87,12 +85,19 @@ namespace TravelAgency
             MessageBox.Show("Added is complete");
 
 
+
             // Mohemaaa Employee form2 = new Employee(CUSN);
             //form2.ShowDialog();
 
             //clear();
             //  MOHEMA   CustomerPhone form = new CustomerPhone(SSN.Text);
             //form.ShowDialog();
+
+            
+            CustomerPhone form = new CustomerPhone(SSN.Text);
+            form.ShowDialog();
+
+
 
         }
 
@@ -205,20 +210,23 @@ namespace TravelAgency
                         temp = true;
                     }
 
-
                     set += "job = '" + Job.Text + "'";
-
-                    
-
                 }
 
+            if (set != "") 
+            {
                 m.Update("SSN = " + SSN.Text, set);
 
+
             
-            MessageBox.Show("Updated is complete");
+            
+
+                MessageBox.Show("Updated is complete");
+            }
 
 
-
+            CustomerPhone form = new CustomerPhone(SSN.Text);
+            form.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -226,7 +234,7 @@ namespace TravelAgency
 
             List<List<string>> R = m.Read();
 
-            
+
             string set = "";
             bool temp = false;
 
@@ -302,9 +310,9 @@ namespace TravelAgency
             }
 
 
-               
-                
-            
+
+
+
 
             if (Dob.Text != "")
             {
@@ -343,6 +351,16 @@ namespace TravelAgency
                     temp = true;
                 }
                 set += "job LIKE '" + Job.Text + "'";
+            }
+
+            List<List<string>> Del = m.Read(set);
+            Main dM = new Main("Customer_phone");
+
+            for (int i = 0; i < Del.Count; i++) 
+            {
+                List<string> ptrvl = Del[i];
+
+                dM.Delete("SSN = " + ptrvl[0]);
             }
 
             m.Delete(set);
@@ -444,8 +462,6 @@ namespace TravelAgency
                 {
                     temp = true;
                 }
-
-                //set += "birthdate = '" + Dob.Text + "'";
 
                 set += " birthdate like '" + Dob.Text + "'";
 
