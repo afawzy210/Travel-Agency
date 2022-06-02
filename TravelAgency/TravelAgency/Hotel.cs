@@ -90,7 +90,7 @@ namespace TravelAgency
 
             MessageBox.Show("Added is complete");
 
-            clear();
+            //clear();
             Invoice form = new Invoice(empid,iddd);
             form.ShowDialog();
         }

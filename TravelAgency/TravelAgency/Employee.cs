@@ -15,9 +15,12 @@ namespace TravelAgency
         Main E = new Main("Employee");
         List<string> LH = new List<string>();
         private string idemp;
-        public Employee()
+        private string CUSN;
+        public string idpass;
+        public Employee(/*string CUSNN*/)
         {
             InitializeComponent();
+            // mohema   CUSN = CUSNN;
         }
         void clear()
         {
@@ -60,15 +63,26 @@ namespace TravelAgency
             data += "' , '" + address.Text;
             data += "' , '" + name.Text ;
             data += "' , '" + password.Text;
+            idpass += data[5].ToString();
             data += "' , " + salairy.Text;
             data += " , " + workinghours.Text;
             
             E.Insert(data);
 
             MessageBox.Show("Added is complete");
-            Hotel form2 = new Hotel(idemp);
-            form2.ShowDialog();
+            //   mohemaaaaaaaaaaaa  Hotel form2 = new Hotel(idemp);
+            //form2.ShowDialog();
+
             
+            //LogIn form5 = new LogIn(idemp,idpass,R);
+            //form5.ShowDialog();
+
+
+
+            //  Mohemmaaa Trip form3 = new Trip(CUSN,idemp);
+            //form3.ShowDialog();
+
+
             //Invoice form = new Invoice(id.Text,idhotel);
             //form.ShowDialog();
             clear();

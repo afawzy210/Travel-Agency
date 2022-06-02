@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\TravelAgency",
-    "\\TravelAgency\\TravelAgency"
+    "\\TravelAgency\\TravelAgency",
+    "\\TravelAgency\\TravelAgency\\Properties"
   ],
-  "SelectedNode": "\\TravelAgency\\TravelAgency\\Invoice.cs",
+  "SelectedNode": "\\TravelAgency\\TravelAgency\\Customer.Designer.cs",
   "PreviewInSolutionExplorer": false
 }

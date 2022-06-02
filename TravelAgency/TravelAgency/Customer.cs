@@ -15,7 +15,7 @@ namespace TravelAgency
     {
         Main m = new Main("customer");
         List<string> LH = new List<string>();
-
+        public string CUSN;
         public Customer()
         {
             InitializeComponent();
@@ -58,6 +58,17 @@ namespace TravelAgency
             string data = "";
 
 
+            
+
+
+            data += SSN.Text;
+            CUSN = data[0].ToString();
+                //data += LID ;
+            
+            
+            
+
+
             data += SSN.Text;         
             data += " , '" + Fname.Text;
             data += "' , '" + Lname.Text;
@@ -73,9 +84,19 @@ namespace TravelAgency
 
             MessageBox.Show("Added is complete");
 
+
+
+            // Mohemaaa Employee form2 = new Employee(CUSN);
+            //form2.ShowDialog();
+
+            //clear();
+            //  MOHEMA   CustomerPhone form = new CustomerPhone(SSN.Text);
+            //form.ShowDialog();
+
             
             CustomerPhone form = new CustomerPhone(SSN.Text);
             form.ShowDialog();
+
 
 
         }
@@ -196,8 +217,13 @@ namespace TravelAgency
             {
                 m.Update("SSN = " + SSN.Text, set);
 
+
+            
+            
+
                 MessageBox.Show("Updated is complete");
             }
+
 
             CustomerPhone form = new CustomerPhone(SSN.Text);
             form.ShowDialog();
@@ -222,7 +248,7 @@ namespace TravelAgency
             {
                 if (temp)
                 {
-                    set += "and ";
+                    set += " and ";
                 }
                 else
                 {
@@ -235,7 +261,7 @@ namespace TravelAgency
             {
                 if (temp)
                 {
-                    set += "and ";
+                    set += " and ";
                 }
                 else
                 {
@@ -248,7 +274,7 @@ namespace TravelAgency
             {
                 if (temp)
                 {
-                    set += "and ";
+                    set += " and ";
                 }
                 else
                 {
@@ -261,7 +287,7 @@ namespace TravelAgency
             {
                 if (temp)
                 {
-                    set += "and ";
+                    set += " and ";
                 }
                 else
                 {
@@ -274,7 +300,7 @@ namespace TravelAgency
             {
                 if (temp)
                 {
-                    set += "and ";
+                    set += " and ";
                 }
                 else
                 {
@@ -292,7 +318,7 @@ namespace TravelAgency
             {
                 if (temp)
                 {
-                    set += "and ";
+                    set += " and ";
                 }
                 else
                 {
@@ -305,7 +331,7 @@ namespace TravelAgency
             {
                 if (temp)
                 {
-                    set += "and ";
+                    set += " and ";
                 }
                 else
                 {
@@ -318,7 +344,7 @@ namespace TravelAgency
             {
                 if (temp)
                 {
-                    set += "and ";
+                    set += " and ";
                 }
                 else
                 {
