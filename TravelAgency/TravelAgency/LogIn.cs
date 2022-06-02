@@ -12,29 +12,27 @@ namespace TravelAgency
 {
     public partial class LogIn : Form
     {
-        Main E = new Main("LogIN");
-        List<string> LH = new List<string>();
+        Main E = new Main("Employee");
+        List<List<string>> LH = new List<List<string>>();
         public string iddd;
 
         public string pass;
-        public LogIn(string empid,string idpass,string[] R)
+        public LogIn()
         {
             InitializeComponent();
-            iddd = empid;
-            pass = idpass;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            LH = E.Read("Emp_id = " + EmpID.Text + " and emp_password like '" + password.Text + "'");
 
             
-            if (textBox1.Text.ToString() == iddd && textBox2.Text.ToString() == pass)
+            if ( LH.Count > 0)
             {
                 Customer form = new Customer();
                 //this.Hide;
                 form.ShowDialog();
-
+                //this.close;
             }
             else
             {

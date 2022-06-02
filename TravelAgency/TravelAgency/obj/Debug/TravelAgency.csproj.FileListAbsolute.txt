@@ -32,3 +32,6 @@ C:\Users\DELL\Source\Repos\afawzy210\Travel-Agency\TravelAgency\TravelAgency\obj
 =======
 D:\SQL\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.CustomerPhone.resources
 >>>>>>> f8af3c71693103f31b2f4806a3e8d1c84f2f83cd
+D:\SQL\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.book.resources
+D:\SQL\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.LogIn.resources
+D:\SQL\Travel-Agency\TravelAgency\TravelAgency\obj\Debug\TravelAgency.Trip.resources
